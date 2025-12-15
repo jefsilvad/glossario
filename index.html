@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Glossário Marketês para Promotores</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Manifest PWA -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#0054A6" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="app-brand">
+      <div class="app-logo">V</div>
+      <div class="app-title-group">
+        <h1>Glossário Marketês</h1>
+        <p>Para promotores de PDV</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <section class="card">
+      <h2>Buscar termo</h2>
+      <input
+        type="search"
+        id="globalSearch"
+        placeholder="Digite um termo (ex.: SKU, share, clip strip)..."
+      />
+      <p class="hint">
+        A busca funciona dentro do glossário e dos materiais de PDV.
+      </p>
+      <div class="search-actions">
+        <a href="glossario.html" class="btn">Buscar no Glossário</a>
+        <a href="materiais.html" class="btn btn-outline">
+          Buscar em Materiais de PDV
+        </a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Navegação rápida</h2>
+      <div class="home-links">
+        <a href="glossario.html" class="home-link">
+          <h3>📘 Glossário</h3>
+          <p>Termos, expressões e indicadores usados no dia a dia.</p>
+        </a>
+        <a href="materiais.html" class="home-link">
+          <h3>🛒 Materiais de PDV</h3>
+          <p>Peças físicas de loja, funções e exemplos práticos.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Índice A–Z (visão geral)</h2>
+      <p class="hint">
+        Use o glossário para ver todos os termos por letra, com exemplos de PDV.
+      </p>
+      <div class="az-index">
+        <a href="glossario.html#letra-a">A</a>
+        <a href="glossario.html#letra-b">B</a>
+        <a href="glossario.html#letra-c">C</a>
+        <a href="glossario.html#letra-d">D</a>
+        <a href="glossario.html#letra-e">E</a>
+        <a href="glossario.html#letra-f">F</a>
+        <a href="glossario.html#letra-g">G</a>
+        <a href="glossario.html#letra-h">H</a>
+        <a href="glossario.html#letra-i">I</a>
+        <a href="glossario.html#letra-j">J</a>
+        <a href="glossario.html#letra-k">K</a>
+        <a href="glossario.html#letra-l">L</a>
+        <a href="glossario.html#letra-m">M</a>
+        <a href="glossario.html#letra-n">N</a>
+        <a href="glossario.html#letra-o">O</a>
+        <a href="glossario.html#letra-p">P</a>
+        <a href="glossario.html#letra-q">Q</a>
+        <a href="glossario.html#letra-r">R</a>
+        <a href="glossario.html#letra-s">S</a>
+        <a href="glossario.html#letra-t">T</a>
+        <a href="glossario.html#letra-u">U</a>
+        <a href="glossario.html#letra-v">V</a>
+        <a href="glossario.html#letra-w">W</a>
+        <a href="glossario.html#letra-x">X</a>
+        <a href="glossario.html#letra-y">Y</a>
+        <a href="glossario.html#letra-z">Z</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>Vitrine Vigor • Ferramenta de apoio para promotores</p>
+  </footer>
+
+  <script>
+    // Apenas encaminha a busca digitada para as páginas internas via querystring
+    const input = document.getElementById('globalSearch');
+    input?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const value = encodeURIComponent(input.value.trim());
+        if (!value) return;
+        // Por padrão, manda para o glossário
+        window.location.href = 'glossario.html?q=' + value;
+      }
+    });
+
+    // Registro básico do service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js').catch(console.error);
+    }
+  </script>
+</body>
+</html>

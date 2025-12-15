@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Materiais de PDV • Marketês para Promotores</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#0054A6" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <button class="back-btn" onclick="history.back()">←</button>
+    <div class="app-title-group">
+      <h1>Materiais de PDV</h1>
+      <p>Peças físicas, funções e exemplos</p>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <section class="card sticky-search">
+      <input
+        type="search"
+        id="searchMateriais"
+        placeholder="Buscar material (ex.: clip strip, wobbler, móbile)..."
+      />
+      <p class="hint">A busca filtra os materiais desta página.</p>
+    </section>
+
+    <!-- Aqui você pode agrupar por tipo -->
+    <section class="card entries" id="materiais">
+      <h2 class="letter-title">Materiais</h2>
+
+      <article class="entry" data-tags="clip strip cross merchandising tiras ganchos afinidade">
+        <h3>Clip Strip</h3>
+        <p class="meta">Tipo: Material de cross merchandising</p>
+        <p>
+          Tira plástica ou metálica com ganchos, usada para pendurar produtos
+          leves em áreas alternativas da loja, perto de categorias com afinidade.
+        </p>
+        <p>
+          Ajuda a aproximar o produto do momento de decisão do cliente, aumentando
+          a chance de compra conjunta.
+        </p>
+        <p class="example">
+          <strong>Exemplo no PDV:</strong>
+          queijos porcionados pendurados na área de massas, estimulando o
+          cliente a levar os dois produtos.
+        </p>
+      </article>
+
+      <article class="entry" data-tags="faixa de gôndola comunicação marca categoria">
+        <h3>Faixa de Gôndola</h3>
+        <p class="meta">Tipo: Identificação de marca/categoria</p>
+        <p>
+          Material aplicado na borda da prateleira para destacar a marca ou
+          a categoria, ajudando o cliente a localizar os produtos.
+        </p>
+        <p class="example">
+          <strong>Exemplo no PDV:</strong>
+          faixa com logo Vigor na borda do refrigerado indicando a área de iogurtes
+          da marca.
+        </p>
+      </article>
+
+      <article class="entry" data-tags="wobbler destaque promoção novidade balanço">
+        <h3>Wobbler</h3>
+        <p class="meta">Tipo: Chamador de atenção</p>
+        <p>
+          Peça presa à prateleira por uma haste flexível que balança levemente,
+          chamando a atenção do cliente para uma promoção, benefício ou novidade.
+        </p>
+        <p class="example">
+          <strong>Exemplo no PDV:</strong>
+          wobbler sinalizando “novo sabor” em frente a um lançamento de iogurte.
+        </p>
+      </article>
+
+      <article class="entry" data-tags="stopper chamador corredor ponto de parada">
+        <h3>Stopper</h3>
+        <p class="meta">Tipo: Chamador de corredor</p>
+        <p>
+          Material posicionado perpendicularmente à prateleira, que entra um
+          pouco no corredor e interrompe a visão do cliente para destacar uma
+          categoria ou produto.
+        </p>
+        <p class="example">
+          <strong>Exemplo no PDV:</strong>
+          stopper com a marca indicando o início da área de iogurtes dentro do
+          corredor de refrigerados.
+        </p>
+      </article>
+
+      <article class="entry" data-tags="móbile pendente teto destaque distância">
+        <h3>Móbile</h3>
+        <p class="meta">Tipo: Material suspenso</p>
+        <p>
+          Peça pendurada no teto ou em estruturas altas, usada para chamar
+          atenção a distância para uma marca, campanha ou categoria.
+        </p>
+        <p class="example">
+          <strong>Exemplo no PDV:</strong>
+          móbiles com a marca Vigor sobre a área de lácteos, visíveis de longe.
+        </p>
+      </article>
+
+      <article class="entry" data-tags="ponta de gôndola endcap exposição extra destaque">
+        <h3>Ponta de Gôndola</h3>
+        <p class="meta">Tipo: Ponto extra de alto impacto</p>
+        <p>
+          Extremidade da gôndola, área de grande fluxo, usada para montar
+          exposições de destaque com maior volume e visibilidade para o cliente.
+        </p>
+        <p class="example">
+          <strong>Exemplo no PDV:</strong>
+          ponta de gôndola com diversos sabores de iogurte Vigor, montada
+          para campanha de promoção.
+        </p>
+      </article>
+
+      <!-- Continue adicionando os demais materiais aqui -->
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <a href="index.html">Voltar à Home</a>
+  </footer>
+
+  <script>
+    const searchMat = document.getElementById('searchMateriais');
+
+    function normaliza(texto) {
+      return texto
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+    }
+
+    function filtrarMateriais(valor) {
+      const termo = normaliza(valor || '');
+      const entries = document.querySelectorAll('.entry');
+      entries.forEach((entry) => {
+        if (!termo) {
+          entry.style.display = '';
+          return;
+        }
+        const texto =
+          normaliza(entry.innerText) +
+          ' ' +
+          normaliza(entry.dataset.tags || '');
+        entry.style.display = texto.includes(termo) ? '' : 'none';
+      });
+    }
+
+    if (searchMat) {
+      searchMat.addEventListener('input', (e) => {
+        filtrarMateriais(e.target.value);
+      });
+    }
+  </script>
+</body>
+</html>
