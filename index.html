@@ -5,9 +5,18 @@
   <title>Glossário Marketês para Promotores</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Manifest PWA -->
-  <link rel="manifest" href="manifest.webmanifest" />
+  <!-- PWA / Manifest -->
+  <link rel="manifest" href="/glossario/manifest.webmanifest" />
   <meta name="theme-color" content="#0054A6" />
+
+  <!-- iOS / Apple -->
+  <link rel="apple-touch-icon" href="/glossario/icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Vitrine Vigor" />
+
+  <!-- Favicon (desktop) -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/glossario/icons/icon-192.png" />
 
   <!-- Estilos -->
   <link rel="stylesheet" href="css/style.css" />
@@ -97,20 +106,21 @@
   </footer>
 
   <script>
-    // Apenas encaminha a busca digitada para as páginas internas via querystring
+    // Busca global (enter envia para glossário)
     const input = document.getElementById('globalSearch');
     input?.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         const value = encodeURIComponent(input.value.trim());
         if (!value) return;
-        // Por padrão, manda para o glossário
         window.location.href = 'glossario.html?q=' + value;
       }
     });
 
-    // Registro básico do service worker
+    // Service Worker (GitHub Pages /glossario/)
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./service-worker.js').catch(console.error);
+      navigator.serviceWorker
+        .register('/glossario/service-worker.js')
+        .catch(console.error);
     }
   </script>
 </body>
