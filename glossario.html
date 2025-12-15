@@ -1,214 +1,330 @@
-<!-- GLOSSÁRIO UNIFICADO -->
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <title>Glossário • Vitrine Vigor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- PWA / Manifest (GitHub Pages /glossario/) -->
   <link rel="manifest" href="/glossario/manifest.webmanifest" />
   <meta name="theme-color" content="#0054A6" />
 
+  <!-- iOS / Apple -->
   <link rel="apple-touch-icon" href="/glossario/icons/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="/glossario/icons/icon-192.png" />
 
-  <!-- O MAIS IMPORTANTE: CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
+<body>
+  <header class="app-header">
+    <div class="app-brand">
+      <a href="index.html" class="app-logo" style="text-decoration:none;">V</a>
+      <div class="app-title-group">
+        <h1>Glossário</h1>
+        <p>Termos e expressões do PDV</p>
+      </div>
+    </div>
+  </header>
 
-<section class="card entries" id="letra-a" data-letra="a">
-  <h2 class="letter-title">A</h2>
+  <main class="app-main">
+    <!-- Barra de busca (usa ?q=) -->
+    <section class="card">
+      <h2>Buscar no Glossário</h2>
+      <input
+        type="search"
+        id="pageSearch"
+        placeholder="Digite um termo (ex.: SKU, share, ruptura)..."
+        autocomplete="off"
+      />
+      <p class="hint">Dica: pressione Enter para filtrar os termos nesta página.</p>
+    </section>
 
-  <article class="entry" data-tags="abastecimento reposição gôndola">
-    <h3>Abastecimento</h3>
-    <p class="meta">Rotina de PDV</p>
-    <p>Ato de colocar produtos na gôndola ou em pontos extras.</p>
-    <p class="example"><strong>Exemplo:</strong> repor iogurtes no refrigerado.</p>
-  </article>
+    <!-- Índice A–Z -->
+    <section class="card">
+      <h2>Índice A–Z</h2>
+      <div class="az-index">
+        <a href="#letra-a">A</a>
+        <a href="#letra-b">B</a>
+        <a href="#letra-c">C</a>
+        <a href="#letra-d">D</a>
+        <a href="#letra-e">E</a>
+        <a href="#letra-f">F</a>
+        <a href="#letra-g">G</a>
+        <a href="#letra-h">H</a>
+        <a href="#letra-i">I</a>
+        <a href="#letra-j">J</a>
+        <a href="#letra-k">K</a>
+        <a href="#letra-l">L</a>
+        <a href="#letra-m">M</a>
+        <a href="#letra-n">N</a>
+        <a href="#letra-o">O</a>
+        <a href="#letra-p">P</a>
+        <a href="#letra-q">Q</a>
+        <a href="#letra-r">R</a>
+        <a href="#letra-s">S</a>
+        <a href="#letra-t">T</a>
+        <a href="#letra-u">U</a>
+        <a href="#letra-v">V</a>
+        <a href="#letra-w">W</a>
+        <a href="#letra-x">X</a>
+        <a href="#letra-y">Y</a>
+        <a href="#letra-z">Z</a>
+      </div>
+    </section>
 
-  <article class="entry" data-tags="alinhamento organização visual">
-    <h3>Alinhamento de Gôndola</h3>
-    <p class="meta">Exposição</p>
-    <p>Organização visual dos produtos, deixando todos retos e de frente.</p>
-  </article>
+    <!-- ENTRADAS DO GLOSSÁRIO (seu conteúdo, só organizado dentro do layout) -->
+    <section class="card entries" id="letra-a" data-letra="a">
+      <h2 class="letter-title">A</h2>
 
-  <article class="entry" data-tags="area quente fluxo loja">
-    <h3>Área Quente</h3>
-    <p class="meta">Exposição</p>
-    <p>Região da loja com maior circulação de clientes.</p>
-  </article>
+      <article class="entry" data-tags="abastecimento reposição gôndola">
+        <h3>Abastecimento</h3>
+        <p class="meta">Rotina de PDV</p>
+        <p>Ato de colocar produtos na gôndola ou em pontos extras.</p>
+        <p class="example"><strong>Exemplo:</strong> repor iogurtes no refrigerado.</p>
+      </article>
 
-  <article class="entry" data-tags="area fria baixo fluxo loja">
-    <h3>Área Fria</h3>
-    <p class="meta">Exposição</p>
-    <p>Região da loja com pouco fluxo de clientes.</p>
-  </article>
-</section>
+      <article class="entry" data-tags="alinhamento organização visual">
+        <h3>Alinhamento de Gôndola</h3>
+        <p class="meta">Exposição</p>
+        <p>Organização visual dos produtos, deixando todos retos e de frente.</p>
+      </article>
 
-<section class="card entries" id="letra-c" data-letra="c">
-  <h2 class="letter-title">C</h2>
+      <article class="entry" data-tags="area quente fluxo loja">
+        <h3>Área Quente</h3>
+        <p class="meta">Exposição</p>
+        <p>Região da loja com maior circulação de clientes.</p>
+      </article>
 
-  <article class="entry" data-tags="check-in check-out sistema">
-    <h3>Check-in / Check-out</h3>
-    <p class="meta">Sistema</p>
-    <p>Registro de entrada e saída do promotor na loja pelo aplicativo.</p>
-  </article>
+      <article class="entry" data-tags="area fria baixo fluxo loja">
+        <h3>Área Fria</h3>
+        <p class="meta">Exposição</p>
+        <p>Região da loja com pouco fluxo de clientes.</p>
+      </article>
+    </section>
 
-  <article class="entry" data-tags="coleta evidencia foto">
-    <h3>Coleta de Evidência</h3>
-    <p class="meta">Sistema</p>
-    <p>Registro por foto para comprovar execução, presença ou material aplicado.</p>
-  </article>
+    <section class="card entries" id="letra-c" data-letra="c">
+      <h2 class="letter-title">C</h2>
 
-  <article class="entry" data-tags="conformidade padrao">
-    <h3>Conformidade</h3>
-    <p class="meta">Qualidade</p>
-    <p>Quando a execução está de acordo com o padrão solicitado.</p>
-  </article>
+      <article class="entry" data-tags="check-in check-out sistema">
+        <h3>Check-in / Check-out</h3>
+        <p class="meta">Sistema</p>
+        <p>Registro de entrada e saída do promotor na loja pelo aplicativo.</p>
+      </article>
 
-  <article class="entry" data-tags="cobertura lojas rota">
-    <h3>Cobertura</h3>
-    <p class="meta">Planejamento</p>
-    <p>Percentual de lojas visitadas dentro da rota prevista.</p>
-  </article>
+      <article class="entry" data-tags="coleta evidencia foto">
+        <h3>Coleta de Evidência</h3>
+        <p class="meta">Sistema</p>
+        <p>Registro por foto para comprovar execução, presença ou material aplicado.</p>
+      </article>
 
-  <article class="entry" data-tags="cross merchandising afinidade">
-    <h3>Cross Merchandising</h3>
-    <p class="meta">Exposição</p>
-    <p>Exposição de produtos de categorias diferentes que combinam entre si.</p>
-    <p class="example"><strong>Exemplo:</strong> queijos próximos às massas.</p>
-  </article>
-</section>
+      <article class="entry" data-tags="conformidade padrao">
+        <h3>Conformidade</h3>
+        <p class="meta">Qualidade</p>
+        <p>Quando a execução está de acordo com o padrão solicitado.</p>
+      </article>
 
-<section class="card entries" id="letra-d" data-letra="d">
-  <h2 class="letter-title">D</h2>
+      <article class="entry" data-tags="cobertura lojas rota">
+        <h3>Cobertura</h3>
+        <p class="meta">Planejamento</p>
+        <p>Percentual de lojas visitadas dentro da rota prevista.</p>
+      </article>
 
-  <article class="entry" data-tags="desvio erro padrao">
-    <h3>Desvio</h3>
-    <p class="meta">Qualidade</p>
-    <p>Qualquer situação fora do padrão esperado.</p>
-  </article>
+      <article class="entry" data-tags="cross merchandising afinidade">
+        <h3>Cross Merchandising</h3>
+        <p class="meta">Exposição</p>
+        <p>Exposição de produtos de categorias diferentes que combinam entre si.</p>
+        <p class="example"><strong>Exemplo:</strong> queijos próximos às massas.</p>
+      </article>
+    </section>
 
-  <article class="entry" data-tags="descontinuado produto">
-    <h3>Produto Descontinuado</h3>
-    <p class="meta">Produto</p>
-    <p>Produto que não deve mais ser exposto ou reposto.</p>
-  </article>
-</section>
+    <section class="card entries" id="letra-d" data-letra="d">
+      <h2 class="letter-title">D</h2>
 
-<section class="card entries" id="letra-e" data-letra="e">
-  <h2 class="letter-title">E</h2>
+      <article class="entry" data-tags="desvio erro padrao">
+        <h3>Desvio</h3>
+        <p class="meta">Qualidade</p>
+        <p>Qualquer situação fora do padrão esperado.</p>
+      </article>
 
-  <article class="entry" data-tags="execucao perfeita padrao">
-    <h3>Execução Perfeita</h3>
-    <p class="meta">Indicador</p>
-    <p>Avalia se todos os padrões da marca foram cumpridos no PDV.</p>
-  </article>
+      <article class="entry" data-tags="descontinuado produto">
+        <h3>Produto Descontinuado</h3>
+        <p class="meta">Produto</p>
+        <p>Produto que não deve mais ser exposto ou reposto.</p>
+      </article>
+    </section>
 
-  <article class="entry" data-tags="estoque falta">
-    <h3>Falta de Estoque</h3>
-    <p class="meta">Estoque</p>
-    <p>Quando não há produto nem na gôndola nem no depósito.</p>
-  </article>
-</section>
+    <section class="card entries" id="letra-e" data-letra="e">
+      <h2 class="letter-title">E</h2>
 
-<section class="card entries" id="letra-f" data-letra="f">
-  <h2 class="letter-title">F</h2>
+      <article class="entry" data-tags="execucao perfeita padrao">
+        <h3>Execução Perfeita</h3>
+        <p class="meta">Indicador</p>
+        <p>Avalia se todos os padrões da marca foram cumpridos no PDV.</p>
+      </article>
 
-  <article class="entry" data-tags="facing frente gôndola">
-    <h3>Facing (Frente)</h3>
-    <p class="meta">Exposição</p>
-    <p>Cada produto visível de frente na prateleira.</p>
-  </article>
+      <article class="entry" data-tags="estoque falta">
+        <h3>Falta de Estoque</h3>
+        <p class="meta">Estoque</p>
+        <p>Quando não há produto nem na gôndola nem no depósito.</p>
+      </article>
+    </section>
 
-  <article class="entry" data-tags="fifo validade">
-    <h3>FIFO</h3>
-    <p class="meta">Estoque</p>
-    <p>Regra em que o produto mais antigo deve ficar à frente.</p>
-  </article>
+    <section class="card entries" id="letra-f" data-letra="f">
+      <h2 class="letter-title">F</h2>
 
-  <article class="entry" data-tags="frente virada">
-    <h3>Frente Virada</h3>
-    <p class="meta">Exposição</p>
-    <p>Produto com rótulo visível e bem posicionado.</p>
-  </article>
-</section>
+      <article class="entry" data-tags="facing frente gôndola">
+        <h3>Facing (Frente)</h3>
+        <p class="meta">Exposição</p>
+        <p>Cada produto visível de frente na prateleira.</p>
+      </article>
 
-<section class="card entries" id="letra-p" data-letra="p">
-  <h2 class="letter-title">P</h2>
+      <article class="entry" data-tags="fifo validade">
+        <h3>FIFO</h3>
+        <p class="meta">Estoque</p>
+        <p>Regra em que o produto mais antigo deve ficar à frente.</p>
+      </article>
 
-  <article class="entry" data-tags="preco praticado">
-    <h3>Preço Praticado</h3>
-    <p class="meta">Preço</p>
-    <p>Preço que está sendo cobrado na loja.</p>
-  </article>
+      <article class="entry" data-tags="frente virada">
+        <h3>Frente Virada</h3>
+        <p class="meta">Exposição</p>
+        <p>Produto com rótulo visível e bem posicionado.</p>
+      </article>
+    </section>
 
-  <article class="entry" data-tags="preco sugerido">
-    <h3>Preço Sugerido</h3>
-    <p class="meta">Preço</p>
-    <p>Preço recomendado pela indústria.</p>
-  </article>
+    <section class="card entries" id="letra-p" data-letra="p">
+      <h2 class="letter-title">P</h2>
 
-  <article class="entry" data-tags="presenca produto">
-    <h3>Presença</h3>
-    <p class="meta">Indicador</p>
-    <p>Indica se o produto está disponível na loja.</p>
-  </article>
+      <article class="entry" data-tags="preco praticado">
+        <h3>Preço Praticado</h3>
+        <p class="meta">Preço</p>
+        <p>Preço que está sendo cobrado na loja.</p>
+      </article>
 
-  <article class="entry" data-tags="ponto extra exposicao">
-    <h3>Ponto Extra</h3>
-    <p class="meta">Exposição</p>
-    <p>Qualquer exposição fora da gôndola principal.</p>
-  </article>
-</section>
+      <article class="entry" data-tags="preco sugerido">
+        <h3>Preço Sugerido</h3>
+        <p class="meta">Preço</p>
+        <p>Preço recomendado pela indústria.</p>
+      </article>
 
-<section class="card entries" id="letra-r" data-letra="r">
-  <h2 class="letter-title">R</h2>
+      <article class="entry" data-tags="presenca produto">
+        <h3>Presença</h3>
+        <p class="meta">Indicador</p>
+        <p>Indica se o produto está disponível na loja.</p>
+      </article>
 
-  <article class="entry" data-tags="reposicao abastecimento">
-    <h3>Reposição</h3>
-    <p class="meta">Rotina de PDV</p>
-    <p>Ato de abastecer a gôndola.</p>
-  </article>
+      <article class="entry" data-tags="ponto extra exposicao">
+        <h3>Ponto Extra</h3>
+        <p class="meta">Exposição</p>
+        <p>Qualquer exposição fora da gôndola principal.</p>
+      </article>
+    </section>
 
-  <article class="entry" data-tags="ruptura falta produto">
-    <h3>Ruptura</h3>
-    <p class="meta">Indicador</p>
-    <p>Quando o cliente não encontra o produto na gôndola.</p>
-  </article>
-</section>
+    <section class="card entries" id="letra-r" data-letra="r">
+      <h2 class="letter-title">R</h2>
 
-<section class="card entries" id="letra-s" data-letra="s">
-  <h2 class="letter-title">S</h2>
+      <article class="entry" data-tags="reposicao abastecimento">
+        <h3>Reposição</h3>
+        <p class="meta">Rotina de PDV</p>
+        <p>Ato de abastecer a gôndola.</p>
+      </article>
 
-  <article class="entry" data-tags="sell in">
-    <h3>Sell-in</h3>
-    <p class="meta">Venda</p>
-    <p>Venda da indústria para o varejo.</p>
-  </article>
+      <article class="entry" data-tags="ruptura falta produto">
+        <h3>Ruptura</h3>
+        <p class="meta">Indicador</p>
+        <p>Quando o cliente não encontra o produto na gôndola.</p>
+      </article>
+    </section>
 
-  <article class="entry" data-tags="sell out">
-    <h3>Sell-out</h3>
-    <p class="meta">Venda</p>
-    <p>Venda do varejo para o consumidor final.</p>
-  </article>
+    <section class="card entries" id="letra-s" data-letra="s">
+      <h2 class="letter-title">S</h2>
 
-  <article class="entry" data-tags="share gôndola">
-    <h3>Share de Gôndola</h3>
-    <p class="meta">Indicador</p>
-    <p>Participação da marca no espaço da gôndola.</p>
-  </article>
+      <article class="entry" data-tags="sell in">
+        <h3>Sell-in</h3>
+        <p class="meta">Venda</p>
+        <p>Venda da indústria para o varejo.</p>
+      </article>
 
-  <article class="entry" data-tags="sku cadastro produto">
-    <h3>SKU</h3>
-    <p class="meta">Produto</p>
-    <p>Código único que identifica um produto específico.</p>
-  </article>
+      <article class="entry" data-tags="sell out">
+        <h3>Sell-out</h3>
+        <p class="meta">Venda</p>
+        <p>Venda do varejo para o consumidor final.</p>
+      </article>
 
-  <article class="entry" data-tags="sincronizacao sistema">
-    <h3>Sincronização</h3>
-    <p class="meta">Sistema</p>
-    <p>Envio das informações coletadas para o sistema.</p>
-  </article>
-</section>
+      <article class="entry" data-tags="share gôndola">
+        <h3>Share de Gôndola</h3>
+        <p class="meta">Indicador</p>
+        <p>Participação da marca no espaço da gôndola.</p>
+      </article>
 
-<!-- FIM DO GLOSSÁRIO -->
+      <article class="entry" data-tags="sku cadastro produto">
+        <h3>SKU</h3>
+        <p class="meta">Produto</p>
+        <p>Código único que identifica um produto específico.</p>
+      </article>
+
+      <article class="entry" data-tags="sincronizacao sistema">
+        <h3>Sincronização</h3>
+        <p class="meta">Sistema</p>
+        <p>Envio das informações coletadas para o sistema.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>Vitrine Vigor • Ferramenta de apoio para promotores</p>
+  </footer>
+
+  <script>
+    // --- Busca na página (filtra entries/termos) ---
+    const input = document.getElementById('pageSearch');
+
+    function normalize(str) {
+      return (str || '')
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+    }
+
+    function applyFilter(q) {
+      const query = normalize(q);
+      const entries = document.querySelectorAll('.entry');
+      const sections = document.querySelectorAll('section.entries');
+
+      entries.forEach((entry) => {
+        const text = normalize(entry.textContent);
+        const tags = normalize(entry.getAttribute('data-tags') || '');
+        const hit = !query || text.includes(query) || tags.includes(query);
+        entry.style.display = hit ? '' : 'none';
+      });
+
+      // esconde seções vazias
+      sections.forEach((sec) => {
+        const anyVisible = Array.from(sec.querySelectorAll('.entry')).some(
+          (el) => el.style.display !== 'none'
+        );
+        sec.style.display = anyVisible ? '' : 'none';
+      });
+    }
+
+    // lê ?q= da URL (vindo do index)
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get('q') || '';
+    if (input) input.value = q;
+    applyFilter(q);
+
+    input?.addEventListener('input', () => applyFilter(input.value.trim()));
+    input?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') applyFilter(input.value.trim());
+    });
+
+    // Service Worker (GitHub Pages /glossario/)
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('/glossario/service-worker.js')
+        .catch(console.error);
+    }
+  </script>
+</body>
+</html>
