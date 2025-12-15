@@ -1,4 +1,4 @@
-const CACHE_NAME = 'glossario-pdv-v3';
+const CACHE_NAME = 'glossario-pdv-v1';
 const BASE = '/glossario';
 
 const ASSETS = [
